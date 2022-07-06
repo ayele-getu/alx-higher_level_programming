@@ -1,11 +1,3 @@
 #!/usr/bin/python3
 def square_matrix_simple(matrix=[]):
-    new_matrix = []
-    for row in matrix:
-        new_row = list([x**2 for x in row])
-        new_matrix.append(new_row)
-    return(new_matrix)
-
-'''
-return[[n**2 for n in row] for row in matrix]
-'''
+    return [[i**2 for i in j] for j in matrix]
