@@ -1,73 +1,69 @@
 #!/usr/bin/python3
-class Square():
-    """A square class."""
+"""Define a class Square."""
+
+
+class Square:
+    """Represent a square."""
+
     def __init__(self, size=0, position=(0, 0)):
-        """Initialization of the class square."""
+        """Initialize a new square.
+        Args:
+            size (int): The size of the new square.
+            position (int, int): The position of the new square.
+        """
         self.size = size
         self.position = position
 
-    def area(self):
-        """The area of the Square"""
-        return self.__size ** 2
-
     @property
     def size(self):
-        """The size of the Square"""
-        return self.__size
+        """Get/set the current size of the square."""
+        return (self.__size)
 
     @size.setter
-    def size(self, SizeValue):
-        """set size of the Square"""
-        if type(SizeValue) != int:
+    def size(self, value):
+        if not isinstance(value, int):
             raise TypeError("size must be an integer")
-        if SizeValue < 0:
+        elif value < 0:
             raise ValueError("size must be >= 0")
-        self.__size = SizeValue
-
-    def my_print(self):
-        """print the Square"""
-        size = self.__size
-        position = self.__position
-        if size == 0:
-            print()
-            return
-        for r in range(position[1]):
-            print()
-        for i in range(size):
-            for spc in range(position[0]):
-                print(" ", end="")
-            for j in range(size):
-                print("#", end="")
-            print()
+        self.__size = value
 
     @property
     def position(self):
-        """The position of the Square"""
-        return self.__position
+        """Get/set the current position of the square."""
+        return (self.__position)
 
     @position.setter
-    def position(self, PositionValue):
-        """set position of the Square"""
-        if type(PositionValue) != tuple or len(PositionValue) != 2:
+    def position(self, value):
+        if (not isinstance(value, tuple) or
+                len(value) != 2 or
+                not all(isinstance(num, int) for num in value) or
+                not all(num >= 0 for num in value)):
             raise TypeError("position must be a tuple of 2 positive integers")
-        if any(type(val) != int for val in PositionValue):
-            raise TypeError("position must be a tuple of 2 positive integers")
-        if any(val < 0 for val in PositionValue):
-            raise TypeError("position must be a tuple of 2 positive integers")
-        self.__position = PositionValue
+        self.__position = value
+
+    def area(self):
+        """Return the current area of the square."""
+        return (self.__size * self.__size)
+
+    def my_print(self):
+        """Print the square with the # character."""
+        if self.__size == 0:
+            print("")
+            return
+
+        [print("") for i in range(0, self.__position[1])]
+        for i in range(0, self.__size):
+            [print(" ", end="") for j in range(0, self.__position[0])]
+            [print("#", end="") for k in range(0, self.__size)]
+            print("")
 
     def __str__(self):
-        size = self.__size
-        position = self.__position
-        strg = ""
-        if size == 0:
-            return ""
-        for r in range(position[1]):
-            strg = strg + "\n"
-        for i in range(size):
-            for spc in range(position[0]):
-                strg = strg + " "
-            for j in range(size):
-                strg = strg + "#"
-            strg = strg + "\n"
-        return strg[:-1]
+        """Define the print() representation of a Square."""
+        if self.__size != 0:
+            [print("") for i in range(0, self.__position[1])]
+        for i in range(0, self.__size):
+            [print(" ", end="") for j in range(0, self.__position[0])]
+            [print("#", end="") for k in range(0, self.__size)]
+            if i != self.__size - 1:
+                print("")
+        return ("")
