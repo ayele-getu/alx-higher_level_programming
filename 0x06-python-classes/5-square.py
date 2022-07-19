@@ -1,35 +1,39 @@
 #!/usr/bin/python3
-class Square():
-    """A square class."""
-    def __init__(self, size=0):
-        """Initialization of the class square."""
-        self.__size = size
+''' defining a class - Square '''
 
-    def area(self):
-        """The area of the Square"""
-        return self.__size ** 2
+
+class Square:
+    ''' Intializing an instance of a class to raise error '''
+
+    def __init__(self, size):
+        self.__size = size
+    ''' getting the value of size '''
 
     @property
     def size(self):
-        """The size of the Square"""
-        return self.__size
+        return (self.__size)
+
+    ''' setting the value of size and making sure there are no errors '''
 
     @size.setter
-    def size(self, SizeValue):
-        """set size of the Square"""
-        if type(SizeValue) != int:
-            raise TypeError("size must be an integer")
-        if SizeValue < 0:
-            raise ValueError("size must be >= 0")
-        self.__size = SizeValue
+    def size(self, value):
+        if not isinstance(value, int):
+            raise TypeError('size must be an integer')
+        elif (value < 0):
+            raise ValueError('size must be >= 0')
+        else:
+            self.size == value
+
+    ''' method to check for area of a square '''
+
+    def area(self):
+        area = self.size ** 2
+        return (area)
+
+    ''' method to print hashes according to square size'''
 
     def my_print(self):
-        """print the Square"""
-        size = self.__size
-        if size == 0:
-            print("")
-            return
-        for i in range(size):
-            for j in range(size):
-                print("#", end="")
-            print("")
+        if (self.size == 0):
+            print()
+        for x in range(self.size):
+            print(self.size * '#')
