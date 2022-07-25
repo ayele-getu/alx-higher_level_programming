@@ -1,0 +1,3 @@
+-This is the README file for python project
+-The name of the project is '0x08-python-more_classes'
+-Author of the project i 'Ayele Gebremariyam'.
