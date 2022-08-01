@@ -1,0 +1,3 @@
+-README for python project
+-Object Oriented Programming
+-inheritance
