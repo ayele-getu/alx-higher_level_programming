@@ -3,7 +3,7 @@
 
 
 def write_file(filename = "", text = ""):
-    """Writes astring to UTF8 texxt file"""
+    """Writes a string to UTF8 texxt file"""
 
-    with open(filename, mode = "w", encoding = "utf-8") as file_object:
-        return file_object.write(text)
+    with open(filename, mode = "w", encoding = "utf-8") as f:
+        return f.write(text)
