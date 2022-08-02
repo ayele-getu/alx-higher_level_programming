@@ -1,0 +1,2 @@
+-This is README file for python project.
+-The project is about input and output in python.
