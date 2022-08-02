@@ -7,4 +7,3 @@ def write_file(filename = "", text = ""):
 
     with open(filename, mode = "w", encoding = "utf-8") as file_object:
         return file_object.write(text)
-        print(len(file_object))
