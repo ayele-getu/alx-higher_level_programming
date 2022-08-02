@@ -2,8 +2,8 @@
 """Defines a file-writing function"""
 
 
-def write_file(filename = "", text = ""):
+def write_file(filename="", text=""):
     """Writes a string to UTF8 texxt file"""
 
-    with open(filename, mode = "w", encoding = "utf-8") as f:
+    with open(filename, mode="w", encoding="utf-8") as f:
         return f.write(text)
