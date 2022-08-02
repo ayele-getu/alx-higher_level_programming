@@ -1,9 +1,9 @@
 #!/usr/bin/python3
-"""writing a text to a file"""
+"""Defines a file-writing function"""
 
 
 def write_file(filename = "", text = ""):
-    """write a text file to utf8"""
+    """Writes astring to UTF8 texxt file"""
 
     with open(filename, mode = "w", encoding = "utf-8") as file_object:
         return file_object.write(text)
