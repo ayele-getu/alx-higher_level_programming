@@ -1,3 +1,3 @@
--This is README file for alx-python project.
+-This is README file for alx python project.
 -The project is about input and output in python.
 -Author ayele-getu.
