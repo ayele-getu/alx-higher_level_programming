@@ -95,4 +95,38 @@ class Rectangle(Base):
         """Return the print() and str() representation of the Rectangle."""
         return ('[Rectangle] ({}) {}/{} - {}/{}'.format(self.id, self.x,self.y, self.width,self.height))
 
+    def update(self, *args, **kwargs):
+        """assign variable attributes"""
+        if len(args):
+            for i, a in enumerate(args):
+                # enumerate gives both the index and value respectively
+                if i == 0:
+                    self.id = a
+                elif i == 1:
+                    self.width = a
+                elif i == 2:
+                    self.height = a
+                elif i == 3:
+                    self.x = a
+                elif i == 4:
+                    self.y = a
 
+        elif kwargs and len(kwargs) != 0:
+            for k, v in kwargs.items():
+                if k == "id":
+                    if v is None:
+                        self.__init__(self.width, self.height, self.x, self.y)
+                    else:
+                        self.id = v
+                elif k == "width":
+                    self.width = v
+                elif k == "height":
+                    self.height = v
+                elif k == "x":
+                    self.x = v
+                elif k == "y":
+                    self.y = v
+
+    def to_dictionary(self):
+            """Return the dictionary representation of the Rectangle."""
+            return ({"id": self.id, "width": self.width, "height": self.height, "x": self.x, "y": self.y})
