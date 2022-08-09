@@ -1,5 +1,10 @@
 #!/usr/bin/python3
 """Define a Base class"""
+
+import json
+import csv
+import turtle
+
 class Base():
     """ An attempt to create a parent class called Base"""
 
