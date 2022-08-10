@@ -1,17 +1,25 @@
 #!/usr/bin/python3
-"""Import the parent class called rectangle"""
-from model.rectangle import Rectangle
+"""Defines a square class."""
+from models.rectangle import Rectangle
+
 
 class Square(Rectangle):
-    """child class, Square inherits methods and attributes from Rectangle"""
+    """Represent a square."""
 
+    def __init__(self, size, x=0, y=0, id=None):
+        """Initialize a new Square.
+        Args:
+            size (int): The size of the new Square.
+            x (int): The x coordinate of the new Square.
+            y (int): The y coordinate of the new Square.
+            id (int): The identity of the new Square.
+        """
 
-    def __init__(self):
-        """Initialize the class with __init__ function"""
         super().__init__(size, size, x, y, id)
 
     def __str__(self):
-        return ('[Square] ({}) {}/{} - {}'.format(self.id, self.x, self.y, self.width))
+        return ('[Square] ({}) {}/{} - {}'.format(self.id, self.x,
+                                                      self.y, self.width))
 
     @property
     def size(self):
