@@ -1,0 +1,4 @@
+-Here it is the README file for alx python project.
+-The project name is : "0x0C. Python - Almost_a_circle".
+-Python.
+-Object Oriented Programming (OOP).
